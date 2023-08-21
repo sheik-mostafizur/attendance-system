@@ -18,11 +18,7 @@ app.get("/public", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  const obj = {
-    name: "Ayman",
-    email: "admin@gmail.com",
-  };
-  res.json(obj);
+  res.json({message: "This is home route."});
 });
 
 app.use((err, req, res, next) => {
