@@ -1,24 +1,24 @@
 const router = require("express").Router();
 const userController = require("../controller/users");
 
-
-
 /**
  * Get user by id or email
  */
-router.get("/:userId", (req, res) => {});
+router.get("/:userId", userController.getUsersByID);
 
 /**
  * update user by id
  * @method PUT
  */
-router.put("/:userId", (req, res) => {});
+router.put("/:userId", userController.putUserById);
 
 /**
  * Update user by id
  * @method PATCH
  */
-router.patch("/:userId", (req, res) => {});
+router.patch("/:userId", userController.patchUserById);
+
+router.delete("/:userId", userController.deleteUserById);
 
 /**
  * Get all users, include
@@ -35,6 +35,6 @@ router.get("/", userController.getUsers);
 /**
  * Create a new user
  */
-router.post("/", (req, res) => {});
+router.post("/", userController.postUser);
 
 module.exports = router;
